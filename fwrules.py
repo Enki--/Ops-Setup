@@ -64,6 +64,7 @@ if __name__ == "__main__":
     # iptables requires root, so we check, and exit if not
     if not os.getuid() == 0:
         print("You must be root!")
+        sys.exit(0)
     table = IpTable()
     print(table)
 

@@ -7,10 +7,14 @@ class TerminalSetup:
     def __init__(self):
         if not os.getuid() == 0:
             print("You must be root!")
+            sys.exit(0)
+        self.tgtCount = 0
+        self.localCount = 0
         
-    def NewTgtTerm(self, terminatorConfig = 'etc/terminator', geometry='1000x400-0+0'):
-        newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'tgt', '--geometry='+geometry]
-        subprocess.Popen(newTgtCmd, start_new_session=True)
+    def NewTgtTerm(self, terminatorConfig = 'etc/terminator', geometry='1000x400'):
+        newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'tgt', '--geometry='+geometry, '-T', 'tgt'+str(self.tgtCount)]
+        subprocess.run(newTgtCmd, start_new_session=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+        self.tgtCount += 1
     
     def NewLocalTerm(self, terminatorConfig = 'etc/terminator', geometry='1000x400-50+50'):
         newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'local', '--geometry='+geometry]
@@ -30,5 +34,7 @@ class TerminalSetup:
 if __name__ == "__main__":
     test = TerminalSetup()
     test.NewTgtTerm()
-    test.NewLocalTerm()
-    test.LocalTermExeCmd('watch -n1 -d ip -s link show eth0')
+    #test.NewTgtTerm()
+    #test.NewTgtTerm()
+    #test.NewLocalTerm()
+    #test.LocalTermExeCmd('watch -n1 -d ip -s link show eth0')
