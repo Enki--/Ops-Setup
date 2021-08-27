@@ -1,0 +1,81 @@
+[global_config]
+  title_transmit_bg_color = "#2777ff"
+  title_receive_bg_color = "#d41919"
+  title_inactive_fg_color = "#ffffff"
+  title_inactive_bg_color = "#23252e"
+[keybindings]
+  zoom_in = None
+  zoom_out = None
+  zoom_normal = None
+  new_tab = None
+  cycle_next = None
+  cycle_prev = None
+  go_next = None
+  go_prev = None
+  go_up = None
+  go_down = None
+  go_left = None
+  go_right = None
+  rotate_cw = None
+  rotate_ccw = None
+  split_horiz = None
+  split_vert = None
+  close_term = None
+  copy = None
+  paste = None
+  toggle_scrollbar = None
+  search = None
+  close_window = None
+  resize_up = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  move_tab_right = None
+  move_tab_left = None
+  toggle_zoom = None
+  scaled_zoom = None
+  next_tab = None
+  prev_tab = None
+  switch_to_tab_1 = None
+  full_screen = None
+  reset = None
+  reset_clear = None
+  hide_window = None
+  group_all = None
+  ungroup_all = None
+  group_tab = None
+  ungroup_tab = None
+  new_window = None
+  new_terminator = None
+  insert_number = None
+  insert_padded = None
+  edit_window_title = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  layout_launcher = None
+  help = None
+[profiles]
+  [[default]]
+    background_color = "#ffffdd"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#000000"
+    palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
+  [[tgt]]
+    background_color = "#ffffdd"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#000000"
+  [[local]]
+    background_color = "#ffffff"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#000000"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
