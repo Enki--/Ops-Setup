@@ -17,6 +17,7 @@ terminals.py
 
 /etc/
     .zshrc
-        Config for zshrc, updated for better history and to display time on the prompt
+        - Config for zshrc, updated for better history and to display time on the prompt
+    
     terminator
-        outsets out profiles to match the required colors
+        - Auto sets our profiles to match the required colors
