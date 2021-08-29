@@ -13,23 +13,23 @@ class TerminalSetup:
         
     def NewTgtTerm(self, terminatorConfig = 'etc/terminator', geometry='1000x400'):
         newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'tgt', '--geometry='+geometry, '-T', 'tgt'+str(self.tgtCount)]
-        subprocess.run(newTgtCmd, start_new_session=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+        subprocess.run(newTgtCmd, start_new_session=True)
         self.tgtCount += 1
     
     def NewLocalTerm(self, terminatorConfig = 'etc/terminator', geometry='1000x400-50+50'):
         newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'local', '--geometry='+geometry]
         print(newTgtCmd)
-        subprocess.Popen(newTgtCmd, start_new_session=True)    
+        subprocess.run(newTgtCmd, start_new_session=True)    
 
     def TgtTermExeCmd(self, command, terminatorConfig = 'etc/terminator', geometry='1000x400-0+0'):
         newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'tgt', '--geometry='+geometry, '-e', command]
         print(newTgtCmd)
-        subprocess.Popen(newTgtCmd, start_new_session=True)
+        subprocess.run(newTgtCmd, start_new_session=True)
     
     def LocalTermExeCmd(self, command, terminatorConfig = 'etc/terminator', geometry='1000x400-50+50'):
         newTgtCmd = ['terminator', '-g', terminatorConfig, '-p', 'local', '--geometry='+geometry, '-e', command]
         print(newTgtCmd)
-        subprocess.Popen(newTgtCmd, start_new_session=True)    
+        subprocess.run(newTgtCmd, start_new_session=True)
 
 if __name__ == "__main__":
     test = TerminalSetup()
